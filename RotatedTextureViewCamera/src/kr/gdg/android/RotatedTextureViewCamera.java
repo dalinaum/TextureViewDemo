@@ -11,7 +11,8 @@ import android.view.Menu;
 import android.view.TextureView;
 import android.view.TextureView.SurfaceTextureListener;
 
-public class TextureViewCamera extends Activity {
+public class RotatedTextureViewCamera extends Activity {
+
     private TextureView mTextureView;
 
     @Override
@@ -19,13 +20,15 @@ public class TextureViewCamera extends Activity {
         super.onCreate(savedInstanceState);
         mTextureView = new TextureView(this);
         mTextureView
-                .setSurfaceTextureListener(new CameraSurfaceTextureListener());
+                .setSurfaceTextureListener(new CameraSurfaceTextureListener(
+                        mTextureView));
         setContentView(mTextureView);
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.activity_texture_view_camera,
+        getMenuInflater().inflate(
+                R.menu.activity_rotated_texture_view_camera,
                 menu);
         return true;
     }
@@ -35,8 +38,10 @@ class CameraSurfaceTextureListener implements
         SurfaceTextureListener {
 
     private Camera mCamera;
+    private TextureView mTextureView;
 
-    public CameraSurfaceTextureListener() {
+    public CameraSurfaceTextureListener(TextureView textureView) {
+        mTextureView = textureView;
     }
 
     @Override
@@ -73,5 +78,8 @@ class CameraSurfaceTextureListener implements
         } catch (IOException ioe) {
             // Something bad happened
         }
+        
+        mTextureView.setRotation(0.1f);
+        mTextureView.setAlpha(0.3f);
     }
 }
