@@ -1,0 +1,24 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <item
+        android:id="@+id/rotate_left"
+        android:icon="@drawable/navigation_previous_item"
+        android:showAsAction="ifRoom"
+        android:title="@string/rotate_left"/>
+    <item
+        android:id="@+id/rotate_right"
+        android:icon="@drawable/navigation_next_item"
+        android:showAsAction="ifRoom"
+        android:title="@string/rotate_right"/>
+    <item
+        android:id="@+id/increase_alpha"
+        android:icon="@drawable/navigation_collapse"
+        android:showAsAction="ifRoom"
+        android:title="@string/increase_alpha"/>
+    <item
+        android:id="@+id/decrease_alpha"
+        android:icon="@drawable/navigation_expand"
+        android:showAsAction="ifRoom"
+        android:title="@string/decrease_alpha"/>
+
+</menu>
