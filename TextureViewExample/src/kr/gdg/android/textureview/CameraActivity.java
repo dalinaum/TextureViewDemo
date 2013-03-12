@@ -1,5 +1,5 @@
 
-package kr.gdg.android;
+package kr.gdg.android.textureview;
 
 import java.io.IOException;
 

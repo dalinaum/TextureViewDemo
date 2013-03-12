@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="kr.gdg.android"
+    package="kr.gdg.android.textureview"
     android:versionCode="1"
     android:versionName="1.0" >
 
@@ -16,7 +16,7 @@
         android:label="@string/camera_activity"
         android:theme="@style/AppTheme" >
         <activity
-            android:name="kr.gdg.android.CameraActivity"
+            android:name="kr.gdg.android.textureview.CameraActivity"
             android:label="@string/camera_activity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
