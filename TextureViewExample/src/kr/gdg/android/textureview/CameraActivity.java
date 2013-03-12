@@ -17,6 +17,11 @@ import android.view.OrientationEventListener;
 import android.view.Surface;
 import android.view.TextureView;
 import android.view.TextureView.SurfaceTextureListener;
+import android.widget.FrameLayout;
+
+import com.google.ads.AdRequest;
+import com.google.ads.AdSize;
+import com.google.ads.AdView;
 
 public class CameraActivity extends Activity {
     public static String TAG = "CameraActivity";
@@ -29,6 +34,14 @@ public class CameraActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.camera_content);
+
+        final AdView adView = new AdView(this, AdSize.SMART_BANNER,
+                "a1513f5a0d88abc");
+        final FrameLayout adContainer = (FrameLayout) findViewById(R.id.adContainer);
+        adContainer.addView(adView);
+        AdRequest adRequest = new AdRequest();
+        //adRequest.addTestDevice(AdRequest.TEST_EMULATOR);
+        adView.loadAd(adRequest);
 
         mCameraSurfaceTextureListener = new CameraSurfaceTextureListener(
                 this);
