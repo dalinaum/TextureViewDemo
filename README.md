@@ -8,4 +8,4 @@ Although I was studying Render Script for Graphics very hard, it had been deprec
 
 License
 -------
-It is absoulutely free. That's all.
+It is absolutely free. That's all.
