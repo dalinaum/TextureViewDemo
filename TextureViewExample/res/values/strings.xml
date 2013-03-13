@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="camera_activity">Camera</string>   
+    <string name="camera_activity">Camera</string>
     <string name="rotate_left">Rotate Left</string>
-    <string name="rotate_right">Rotate Right</string>    
+    <string name="rotate_right">Rotate Right</string>
     <string name="increase_alpha">Increase Alpha</string>
     <string name="decrease_alpha">Decrease Alpha</string>
+    <string name="list_activity">TextureView Demo</string>
 
 </resources>

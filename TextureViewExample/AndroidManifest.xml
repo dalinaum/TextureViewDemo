@@ -18,13 +18,17 @@
         android:label="@string/camera_activity"
         android:theme="@style/AppTheme" >
         <activity
-            android:name="kr.gdg.android.textureview.CameraActivity"
-            android:label="@string/camera_activity" >
+            android:name=".ListActivity"
+            android:label="@string/list_activity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name=".CameraActivity"
+            android:label="@string/camera_activity" >
         </activity>
         <activity
             android:name="com.google.ads.AdActivity"
