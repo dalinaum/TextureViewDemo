@@ -3,6 +3,7 @@ package kr.gdg.android.textureview;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,7 +18,10 @@ public class ListActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         final Demo[] demos = {
-                new Demo("Camera", CameraActivity.class)
+                new Demo("Camera", CameraActivity.class),
+                new Demo("GL Triangle", GLTriangleActivity.class),
+
+                new Demo("Demo repository", null)
         };
 
         super.onCreate(savedInstanceState);
@@ -33,7 +37,11 @@ public class ListActivity extends Activity {
                 final Demo demo = getItem(position);
                 final TextView activityClass = (TextView) view
                         .findViewById(R.id.activity_class);
-                activityClass.setText(demo.classType.toString());
+                if (demo.classType != null) {
+                    activityClass.setText(demo.classType.toString());
+                } else {
+                    activityClass.setText("");
+                }
                 return view;
             }
         });
@@ -44,8 +52,14 @@ public class ListActivity extends Activity {
                     int position, long id) {
                 final Demo demo = (Demo) parent.getAdapter().getItem(
                         position);
-                final Intent intent = new Intent(ListActivity.this,
-                        demo.classType);
+                final Intent intent;
+                if (demo.classType != null) {
+                    intent = new Intent(ListActivity.this, demo.classType);
+                } else {
+                    final String url = "https://github.com/dalinaum/textureviewdemo";
+                    intent = new Intent(Intent.ACTION_VIEW);
+                    intent.setData(Uri.parse(url));
+                }
                 startActivity(intent);
             }
         });

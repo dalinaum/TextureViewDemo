@@ -3,7 +3,9 @@ package kr.gdg.android.textureview;
 
 import java.io.IOException;
 
+import android.app.ActionBar;
 import android.app.Activity;
+import android.content.Intent;
 import android.graphics.SurfaceTexture;
 import android.hardware.Camera;
 import android.hardware.Camera.CameraInfo;
@@ -33,14 +35,17 @@ public class CameraActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.camera_content);
+        setContentView(R.layout.content);
+
+        ActionBar actionBar = getActionBar();
+        actionBar.setDisplayHomeAsUpEnabled(true);
 
         final AdView adView = new AdView(this, AdSize.SMART_BANNER,
                 "a1513f5a0d88abc");
         final FrameLayout adContainer = (FrameLayout) findViewById(R.id.adContainer);
         adContainer.addView(adView);
         AdRequest adRequest = new AdRequest();
-        //adRequest.addTestDevice(AdRequest.TEST_EMULATOR);
+        // adRequest.addTestDevice(AdRequest.TEST_EMULATOR);
         adView.loadAd(adRequest);
 
         mCameraSurfaceTextureListener = new CameraSurfaceTextureListener(
@@ -53,14 +58,18 @@ public class CameraActivity extends Activity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.activity_texture_view_camera,
-                menu);
+        getMenuInflater().inflate(R.menu.actionbar_menu, menu);
         return true;
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
+            case android.R.id.home:
+                Intent intent = new Intent(this, ListActivity.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(intent);
+                return true;
             case R.id.increase_alpha:
                 mTextureView.setAlpha(mTextureView.getAlpha() + 0.1f);
                 return true;
