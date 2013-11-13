@@ -4,6 +4,7 @@
     <string name="app_name">TextureView Demo</string>
     <string name="camera_activity">Camera</string>
     <string name="gltriangle_activity">GL Triangle</string>
+    <string name="canvas_activity">Canvas Activity</string>
     
     <string name="rotate_left">Rotate Left</string>
     <string name="rotate_right">Rotate Right</string>

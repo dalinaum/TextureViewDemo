@@ -20,7 +20,9 @@ public class ListActivity extends Activity {
         final Demo[] demos = {
                 new Demo("Camera", CameraActivity.class),
                 new Demo("GL Triangle", GLTriangleActivity.class),
-
+                new Demo("Canvas", CanvasActivity.class),
+                new Demo("Canvas2", Canvas2Activity.class),
+                
                 new Demo("Demo repository", null)
         };
 
