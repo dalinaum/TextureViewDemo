@@ -1,5 +1,6 @@
 TextureViewDemo
 ===============
+Branch Master: [![Build Status](https://travis-ci.org/dalinaum/TextureViewDemo.png?branch=master)](https://travis-ci.org/dalinaum/TextureViewDemo)
 
 It includes very simple `TextureView` demos. 
 
